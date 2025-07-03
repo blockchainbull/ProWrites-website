@@ -44,13 +44,6 @@ export default function Header() {
                 role="menu"
               >
                 <div className="py-2">
-                  <Link
-                    href="/solutions"
-                    className="block px-4 py-3 text-gray-700 hover:bg-[#F1FFE9] hover:text-[#008080] transition border-b border-gray-100"
-                  >
-                    <div className="font-semibold">All Solutions</div>
-                    <div className="text-sm text-gray-500">View our complete solutions overview</div>
-                  </Link>
 
                   <Link
                     href="/solutions/patient-education"
