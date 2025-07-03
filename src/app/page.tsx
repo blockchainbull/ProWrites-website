@@ -268,7 +268,7 @@ export default function Home() {
                     <h3 className="text-xl font-bold mb-2 text-gray-900">Clinical-Grade Accuracy</h3>
                     <p className="text-gray-600">
                       Content that passes the strictest medical review because 
-                      it's written by practicing clinicians who understand the stakes of healthcare communication.
+                      it&apos; written by practicing clinicians who understand the stakes of healthcare communication.
                     </p>
                   </div>
                 </div>

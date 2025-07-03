@@ -14,7 +14,7 @@ export default function ClinicalAuthority() {
               Clinical Authority That Positions You as the Expert
             </h1>
             <p className="text-xl mb-8 text-teal-100">
-              Your medical expertise deserves recognition in the industry's most respected publications 
+              Your medical expertise deserves recognition in the industry&apos; most respected publications 
               and platforms. Our physician-authored clinical content establishes your authority, amplifies 
               your research, and positions your organization as the definitive voice in your specialty.
             </p>
@@ -269,7 +269,7 @@ export default function ClinicalAuthority() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Establish Your Clinical Authority?</h2>
           <p className="text-xl mb-8 text-teal-100 max-w-2xl mx-auto">
-            Let's discuss how physician-authored content can position your organization 
+            Let&apos; discuss how physician-authored content can position your organization 
             as the definitive expert in your specialty.
           </p>
           <button className="bg-white text-[#008080] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-lg">

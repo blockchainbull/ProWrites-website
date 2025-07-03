@@ -219,7 +219,7 @@ export default function Solutions() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Medical Content?</h2>
           <p className="text-xl mb-8 text-teal-100 max-w-2xl mx-auto">
-            Let's discuss which solution best fits your organization's needs and objectives.
+            Let&apos; discuss which solution best fits your organization&apos; needs and objectives.
           </p>
           <div className="flex justify-center space-x-4">
             <button className="bg-white text-[#008080] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-lg">

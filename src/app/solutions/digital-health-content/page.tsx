@@ -137,7 +137,7 @@ export default function DigitalHealthContent() {
                 <p className="text-gray-600">
                   Our content increases user adoption rates by <strong className="text-[#008080]">45%</strong> and 
                   reduces support tickets by <strong className="text-[#008080]">38%</strong>—measurable improvements 
-                  that enhance your platform's success.
+                  that enhance your platform&apos; success.
                 </p>
               </div>
 
@@ -244,7 +244,7 @@ export default function DigitalHealthContent() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Digital Health Platform?</h2>
           <p className="text-xl mb-8 text-teal-100 max-w-2xl mx-auto">
-            Let's discuss how physician-authored content can drive higher user adoption 
+            Let&apos; discuss how physician-authored content can drive higher user adoption 
             and better outcomes for your digital health technology.
           </p>
           <button className="bg-white text-[#008080] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-lg">

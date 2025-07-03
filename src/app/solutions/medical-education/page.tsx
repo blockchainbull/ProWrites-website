@@ -151,7 +151,7 @@ export default function MedicalEducation() {
                 <p className="text-gray-600">
                   Our content delivers <strong className="text-[#008080]">89% first-time pass rates</strong> and{' '}
                   <strong className="text-[#008080]">23% higher exam scores</strong>—measurable results that 
-                  enhance your program's reputation.
+                  enhance your program&apos; reputation.
                 </p>
               </div>
 
@@ -258,7 +258,7 @@ export default function MedicalEducation() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">Ready to Transform Your Medical Education Programs?</h2>
           <p className="text-xl mb-8 text-teal-100 max-w-2xl mx-auto">
-            Let's discuss how physician-authored content can drive better learning outcomes 
+            Let&apos; discuss how physician-authored content can drive better learning outcomes 
             and higher ROI for your organization.
           </p>
           <button className="bg-white text-[#008080] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-lg">
