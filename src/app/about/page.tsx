@@ -36,7 +36,7 @@ export default function About() {
                 Our founder, a practicing physician, experienced this firsthand when reviewing 
                 patient education materials that, while well-written, failed to address the real 
                 concerns and questions patients have. The disconnect was clear – excellent writing 
-                skills weren't enough without deep medical understanding.
+                skills weren&apos;t enough without deep medical understanding.
               </p>
               <p>
                 Today, ProWrites combines the clinical expertise of practicing physicians with 

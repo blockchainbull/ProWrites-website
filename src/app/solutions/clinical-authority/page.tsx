@@ -37,7 +37,7 @@ export default function ClinicalAuthority() {
             <h2 className="text-4xl font-bold text-gray-900 mb-8">Why Clinical Authority Building Often Falls Short</h2>
             <p className="text-xl text-gray-600 leading-relaxed">
               Generic medical writing lacks the clinical depth and credibility that top-tier publications 
-              demand. When your groundbreaking research and expertise aren't communicated with the precision 
+              demand. When your groundbreaking research and expertise are&apos;nt communicated with the precision 
               and authority they deserve, opportunities for recognition, funding, and professional advancement 
               are lost.
             </p>

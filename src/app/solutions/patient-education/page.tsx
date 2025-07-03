@@ -37,8 +37,8 @@ export default function PatientEducation() {
             <h2 className="text-4xl font-bold text-gray-900 mb-8">Why Most Patient Education Fails</h2>
             <p className="text-xl text-gray-600 leading-relaxed">
               Generic health content written by non-medical writers creates confusion, reduces trust, 
-              and leads to poor health outcomes. When patients can't understand or trust their education 
-              materials, they're more likely to skip treatments, miss follow-up appointments, and end up 
+              and leads to poor health outcomes. When patients can&apos;t understand or trust their education 
+              materials, they&apos;re more likely to skip treatments, miss follow-up appointments, and end up 
               back in your facility.
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function PatientEducation() {
               <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-[#008080]">
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Higher Engagement Rates</h3>
                 <p className="text-gray-600">
-                  Materials that patients actually read and reference because they're written by 
+                  Materials that patients actually read and reference because they&apos;re written by 
                   doctors who understand their concerns and questions.
                 </p>
               </div>

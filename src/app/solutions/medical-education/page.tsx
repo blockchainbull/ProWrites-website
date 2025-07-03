@@ -38,7 +38,7 @@ export default function MedicalEducation() {
             <p className="text-xl text-gray-600 leading-relaxed">
               Generic educational content created by non-clinicians lacks the practical insights 
               and real-world application that healthcare professionals need. When medical education 
-              doesn't connect theory to practice, it fails to change behaviors or improve patient outcomes.
+              doesn&apos;t connect theory to practice, it fails to change behaviors or improve patient outcomes.
             </p>
           </div>
         </div>

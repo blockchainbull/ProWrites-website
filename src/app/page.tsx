@@ -128,7 +128,7 @@ export default function Home() {
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Medical Education</h3>
               <h4 className="text-lg font-semibold mb-3 text-[#008080]">Deliver Training That Actually Improves Clinical Performance</h4>
               <p className="text-gray-600 mb-4">
-                Accelerate your learners' success with physician-created content that bridges knowledge gaps and drives 
+                Accelerate your learners&apos; success with physician-created content that bridges knowledge gaps and drives 
                 measurable outcomes. Achieve better first-time pass rates and higher engagement.
               </p>
               <ul className="text-sm text-gray-600 space-y-2 mb-6">
@@ -336,8 +336,8 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 mb-6 italic">
-                "Their regulatory writing expertise was instrumental in our successful FDA submission. 
-                The quality and attention to detail exceeded our expectations."
+                &quot;Their regulatory writing expertise was instrumental in our successful FDA submission. 
+                The quality and attention to detail exceeded our expectations.&quot;
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
@@ -361,8 +361,8 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 mb-6 italic">
-                "Outstanding scientific writing and publication support. They helped us publish 
-                in top-tier journals and communicate our research effectively."
+                &quot;Outstanding scientific writing and publication support. They helped us publish 
+                in top-tier journals and communicate our research effectively.&quot;
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
@@ -386,8 +386,8 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 mb-6 italic">
-                "Professional, reliable, and incredibly knowledgeable. They've become our 
-                go-to partner for all medical writing needs across multiple therapeutic areas."
+                &quot;Professional, reliable, and incredibly knowledgeable. They&apos;ve become our 
+                go-to partner for all medical writing needs across multiple therapeutic areas.&quot;
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">

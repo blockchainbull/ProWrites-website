@@ -37,7 +37,7 @@ export default function DigitalHealthContent() {
             <h2 className="text-4xl font-bold text-gray-900 mb-8">Why Digital Health Content Often Fails</h2>
             <p className="text-xl text-gray-600 leading-relaxed">
               Generic content created by non-medical writers creates confusion in clinical workflows 
-              and reduces user trust. When healthcare technology content doesn't reflect real-world 
+              and reduces user trust. When healthcare technology content doesn&apos;t reflect real-world 
               medical practice, it leads to poor adoption rates, frustrated users, and failed digital 
               health initiatives.
             </p>

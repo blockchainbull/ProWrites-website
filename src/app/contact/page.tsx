@@ -15,7 +15,7 @@ export default function Contact() {
             </h1>
             <p className="text-xl mb-8 text-teal-100">
               Ready to elevate your medical content with physician-authored expertise? 
-              We're here to help you achieve better outcomes through better communication.
+              We&apos;re here to help you achieve better outcomes through better communication.
             </p>
           </div>
         </div>
