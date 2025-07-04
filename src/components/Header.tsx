@@ -81,7 +81,7 @@ export default function Header() {
             </div>
 
             <Link href="/about" className="text-white hover:text-[#008080]">
-              About
+              About Us
             </Link>
             <Link href="/contact" className="text-white hover:text-[#008080]">
               Contact

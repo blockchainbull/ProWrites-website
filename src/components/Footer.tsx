@@ -18,10 +18,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="text-[#008080] hover:text-teal-700"
               >
-                <Image src="/linkedin.svg" alt="LinkedIn" width={24} height={24} />
-              </a>
-              <a href="#" className="text-[#008080] hover:text-teal-700">
-                Twitter
+                <Image src="/linkedin.svg" alt="LinkedIn" width={60} height={30} />
               </a>
             </div>
           </div>
@@ -37,10 +34,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4 text-[#008080]">Company</h4>
             <ul className="space-y-2 text-white">
-              <li><a href="#" className="hover:text-[#008080]">About Us</a></li>
-              <li><a href="#" className="hover:text-[#008080]">Our Team</a></li>
-              <li><a href="#" className="hover:text-[#008080]">Case Studies</a></li>
-              <li><a href="#" className="hover:text-[#008080]">Careers</a></li>
+              <li><Link href="/about" className="text-white hover:text-[#008080]">
+              About Us
+            </Link></li>
             </ul>
           </div>
           <div>

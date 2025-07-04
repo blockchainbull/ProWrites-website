@@ -63,7 +63,7 @@ export default function Home() {
             </h1>
             <p className="text-2xl mb-8 text-blue-100">
               Your medical expertise deserves content created by physicians who understand the complexities firsthand. 
-              We translate complex medical knowledge into clear, actionable content that drives patient engagement and clinical outcomes.
+              We translate complex medical knowledge into clear, actionable content that drives engagement and clinical outcomes.
             </p>
             <div className="flex justify-center space-x-4">
               <button className="bg-white text-[#008080] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
