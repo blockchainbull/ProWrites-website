@@ -2,6 +2,8 @@
 import { useState, useEffect } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
@@ -107,7 +109,7 @@ export default function Home() {
                 <li>• Treatment guides that eliminate confusion</li>
                 <li>• Post-procedure care instructions that prevent complications</li>
               </ul>
-              <a 
+              <Link 
                 href="/solutions/patient-education" 
                 className="inline-flex items-center text-[#008080] font-semibold hover:text-teal-700 transition"
               >
@@ -115,7 +117,7 @@ export default function Home() {
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
             </div>
 
             {/* Medical Education */}
@@ -136,7 +138,7 @@ export default function Home() {
                 <li>• Specialty boards, USMLE, NCLEX prep materials</li>
                 <li>• Interactive learning resources that engage</li>
               </ul>
-              <a 
+              <Link 
                 href="/solutions/medical-education" 
                 className="inline-flex items-center text-[#008080] font-semibold hover:text-teal-700 transition"
               >
@@ -144,7 +146,7 @@ export default function Home() {
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
             </div>
 
             {/* Clinical Authority */}
@@ -165,7 +167,7 @@ export default function Home() {
                 <li>• Thought leadership articles that generate buzz</li>
                 <li>• Scientific communication strategies that amplify impact</li>
               </ul>
-              <a 
+              <Link
                 href="/solutions/clinical-authority" 
                 className="inline-flex items-center text-[#008080] font-semibold hover:text-teal-700 transition"
               >
@@ -173,7 +175,7 @@ export default function Home() {
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
             </div>
 
             {/* Digital Health Content */}
@@ -184,7 +186,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-gray-900">Digital Health</h3>
-              <h4 className="text-lg font-semibold mb-3 text-[#008080]">Content Drive User Adoption That Actually Sticks</h4>
+              <h4 className="text-lg font-semibold mb-3 text-[#008080]">Content That Drives User Adoption</h4>
               <p className="text-gray-600 mb-4">
                 Eliminate user frustration with clinically-informed content that healthcare professionals trust. 
                 Increase platform adoption while reducing support tickets.
@@ -194,15 +196,15 @@ export default function Home() {
                 <li>• Telehealth platform materials that guide seamlessly</li>
                 <li>• Digital therapeutics content that engages</li>
               </ul>
-              <a 
-                href="/solutions/digital-health-content" 
+              <Link 
+                href="/solutions/digital-health" 
                 className="inline-flex items-center text-[#008080] font-semibold hover:text-teal-700 transition"
               >
                 Learn More
                 <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -213,9 +215,6 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">The Clinical Advantage in Healthcare Content</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              can add text here
-            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -274,48 +273,67 @@ export default function Home() {
                 </div>
               </div>
             </div>
+              <Image src="/ai.svg" alt="Clinical Healthcare Content Illustration" width={550} height={400} />
+            
+          </div>
+        </div>
+      </section>
 
-            <div className="bg-white p-8 rounded-2xl shadow-xl">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">Impressive Track Record</h3>
-                <p className="text-gray-600">Numbers that speak to our expertise</p>
-              </div>
-              
-              <div className="grid grid-cols-2 gap-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-blue-600 mb-2">500+</div>
-                  <div className="text-gray-600">Regulatory Submissions</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-green-600 mb-2">98%</div>
-                  <div className="text-gray-600">Client Retention Rate</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-purple-600 mb-2">15+</div>
-                  <div className="text-gray-600">Years Experience</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-red-600 mb-2">50+</div>
-                  <div className="text-gray-600">Therapeutic Areas</div>
-                </div>
-              </div>
+
+      {/* Trusted By Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 max-w-5xl mx-auto leading-tight">
+              Trusted by leading medical centers, health systems, and healthcare innovators who demand clinical-level expertise.
+            </h2>
+          </div>
+          
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 items-center justify-items-center max-w-4xl mx-auto">
+            <div className="flex items-center justify-center h-20">
+              <Image 
+                src="/jandj.png" 
+                alt="Johnson & Johnson" 
+                width={140} 
+                height={60}
+                className="max-w-full h-auto opacity-60 hover:opacity-80 transition-opacity grayscale hover:grayscale-0"
+              />
+            </div>
+            
+            <div className="flex items-center justify-center h-20">
+              <Image 
+                src="/api.png" 
+                alt="American Physicians Institute" 
+                width={140} 
+                height={60}
+                className="max-w-full h-auto opacity-60 hover:opacity-80 transition-opacity grayscale hover:grayscale-0"
+              />
+            </div>
+            
+            <div className="flex items-center justify-center h-20">
+              <Image 
+                src="/cs.png" 
+                alt="ClinicalSource" 
+                width={140} 
+                height={60}
+                className="max-w-full h-auto opacity-60 hover:opacity-80 transition-opacity grayscale hover:grayscale-0"
+              />
+            </div>
+            
+            <div className="flex items-center justify-center h-20">
+              <Image 
+                src="/medtronic.png" 
+                alt="Medtronic" 
+                width={140} 
+                height={60}
+                className="max-w-full h-auto opacity-60 hover:opacity-80 transition-opacity grayscale hover:grayscale-0"
+              />
             </div>
           </div>
         </div>
       </section>
-      {/* Trusted By Section */}
-      <section className="py-12 bg-[#F1FFE9]">
-        <div className="container mx-auto px-4">
-          <p className="text-center text-gray-600 mb-8">Trusted by leading medical centers, health systems, and healthcare innovators who demand clinical-level expertise.</p>
-          <div className="flex justify-center items-center space-x-12 opacity-60">
-            <div className="text-2xl font-bold text-gray-400">Pfizer</div>
-            <div className="text-2xl font-bold text-gray-400">Cleveland Clinic</div>
-            <div className="text-2xl font-bold text-gray-400">Johnson & Johnson</div>
-            <div className="text-2xl font-bold text-gray-400">Mayo Clinic</div>
-            <div className="text-2xl font-bold text-gray-400">Novartis</div>
-          </div>
-        </div>
-      </section>
+
+      
       {/* Testimonials Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -336,16 +354,23 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 mb-6 italic">
-                &quot;Their regulatory writing expertise was instrumental in our successful FDA submission. 
-                The quality and attention to detail exceeded our expectations.&quot;
+                &quot;I&apos;ve been contracting ProWrites since mid-2018 and they
+                      have been nothing but efficient, professional, and high
+                      quality. Our team works on tight deadlines with many
+                      guidelines that ProWrites have followed since day one.
+                      Our working projects include various forms of medical
+                      writing, which Prowrites have positively impacted our
+                      quantity and quality. If you require organization,
+                      motivation to learn, assistance on project coordination,
+                      and exceptional work, I would highly recommend ProWites!&quot;
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-blue-600 font-bold">JD</span>
+                  <span className="text-blue-600 font-bold">BD</span>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">Dr. John Davidson</div>
-                  <div className="text-sm text-gray-800">VP Regulatory Affairs, BioPharma Corp</div>
+                  <div className="font-semibold text-gray-900">Brianne D.</div>
+                  <div className="text-sm text-gray-800">Educational Program Manager</div>
                 </div>
               </div>
             </div>
@@ -361,16 +386,18 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 mb-6 italic">
-                &quot;Outstanding scientific writing and publication support. They helped us publish 
-                in top-tier journals and communicate our research effectively.&quot;
+                &quot;It&apos;s been a true pleasure working with Prowrites. They
+                      supported us by providing many patient clinical cases
+                      build-up and written in a highly professional and
+                      readable style.&quot;
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-green-600 font-bold">SM</span>
+                  <span className="text-green-600 font-bold">MH</span>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">Dr. Sarah Miller</div>
-                  <div className="text-sm text-gray-800">Chief Medical Officer, MedTech Solutions</div>
+                  <div className="font-semibold text-gray-900">Moniek Haan</div>
+                  <div className="text-sm text-gray-800">Sr. Digital Marketing Manager at Medtronic</div>
                 </div>
               </div>
             </div>
@@ -386,16 +413,19 @@ export default function Home() {
                 </div>
               </div>
               <p className="text-gray-600 mb-6 italic">
-                &quot;Professional, reliable, and incredibly knowledgeable. They&apos;ve become our 
-                go-to partner for all medical writing needs across multiple therapeutic areas.&quot;
+                &quot;Prowrites is one of our best and consistently delivers incredible
+                      writing, management, and task management. We work with
+                      hundreds of freelancers per year but the staff at Prowrites is in
+                      the top 1% of all our commitments. They are organized, flexible,
+                      professional. I look forward to working with them for a long time.&quot;
               </p>
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-purple-600 font-bold">MR</span>
+                  <span className="text-purple-600 font-bold">SH</span>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">Dr. Michael Roberts</div>
-                  <div className="text-sm text-gray-800">Director of Clinical Research, Global Health Institute</div>
+                  <div className="font-semibold text-gray-900">Shuhan H.</div>
+                  <div className="text-sm text-gray-800">CEO Conduct Science</div>
                 </div>
               </div>
             </div>

@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Link from 'next/link';
 
 export default function About() {
   return (
@@ -188,12 +189,12 @@ export default function About() {
           <p className="text-xl mb-8 text-teal-100 max-w-2xl mx-auto">
             Experience the difference that physician-authored content can make for your organization.
           </p>
-          <a 
+          <Link 
             href="/contact" 
             className="inline-block bg-white text-[#008080] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-lg"
           >
             Get In Touch
-          </a>
+          </Link>
         </div>
       </section>
 

@@ -73,7 +73,7 @@ export default function Header() {
                     href="/solutions/digital-health-content"
                     className="block px-4 py-3 text-gray-700 hover:bg-[#F1FFE9] hover:text-[#008080] transition"
                   >
-                    <div className="font-semibold">Digital Health Content</div>
+                    <div className="font-semibold">Digital Health</div>
                     <div className="text-sm text-gray-500">Content for apps, platforms, and digital tools</div>
                   </Link>
                 </div>

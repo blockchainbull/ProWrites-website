@@ -25,10 +25,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4 text-[#008080]">Solutions</h4>
             <ul className="space-y-2 text-white">
-              <li><a href="#" className="hover:text-[#008080]">Patient Education</a></li>
-              <li><a href="#" className="hover:text-[#008080]">Medical Education</a></li>
-              <li><a href="#" className="hover:text-[#008080]">Clinical Authority</a></li>
-              <li><a href="#" className="hover:text-[#008080]">Digital Health</a></li>
+              <li><Link href="/solutions/patient-education" className="hover:text-[#008080]">Patient Education</Link></li>
+              <li><Link href="/solutions/medical-education" className="hover:text-[#008080]">Medical Education</Link></li>
+              <li><Link href="/solutions/clinical-authority" className="hover:text-[#008080]">Clinical Authority</Link></li>
+              <li><Link href="/solutions/digital-health" className="hover:text-[#008080]">Digital Health</Link></li>
             </ul>
           </div>
           <div>
