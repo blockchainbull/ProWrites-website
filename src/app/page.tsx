@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Image from 'next/image';
 import Link from 'next/link';
+import CalendlyWidget from '@/components/Calendly';
 
 export default function Home() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0)
@@ -39,6 +40,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       <Header />
+      <CalendlyWidget />
       
       {/* Hero Section */}
       <section className="relative bg-gradient-to-r from-[#008080] to-[#006666] text-white py-20">

@@ -70,7 +70,7 @@ export default function Header() {
                   </Link>
 
                   <Link
-                    href="/solutions/digital-health-content"
+                    href="/solutions/digital-health"
                     className="block px-4 py-3 text-gray-700 hover:bg-[#F1FFE9] hover:text-[#008080] transition"
                   >
                     <div className="font-semibold">Digital Health</div>

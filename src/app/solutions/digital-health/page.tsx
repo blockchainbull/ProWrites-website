@@ -135,8 +135,8 @@ export default function DigitalHealthContent() {
               <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-[#008080]">
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Proven Engagement</h3>
                 <p className="text-gray-600">
-                  Our content increases user adoption rates by <strong className="text-[#008080]">45%</strong> and 
-                  reduces support tickets by <strong className="text-[#008080]">38%</strong>—measurable improvements 
+                  Our content increases user adoption rates and 
+                  reduces support tickets—measurable improvements 
                   that enhance your platform&apos; success.
                 </p>
               </div>

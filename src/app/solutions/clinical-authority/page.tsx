@@ -158,26 +158,21 @@ export default function ClinicalAuthority() {
               <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-[#008080]">
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Enhanced Credibility</h3>
                 <p className="text-gray-600">
-                  Our content helps secure publication in top-tier medical journals, with{' '}
-                  <strong className="text-[#008080]">92% acceptance rates</strong> for peer-reviewed submissions.
+                  Our physician-authored content establishes your expertise across multiple channels, from industry publications to professional speaking engagements.
                 </p>
               </div>
 
               <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-[#008080]">
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Accelerated Recognition</h3>
                 <p className="text-gray-600">
-                  Physician-authored thought leadership increases speaking opportunities by{' '}
-                  <strong className="text-[#008080]">65%</strong> and media mentions by{' '}
-                  <strong className="text-[#008080]">78%</strong>.
+                  Strategic thought leadership content positions you as the go-to expert in your specialty, attracting media attention and industry partnerships.
                 </p>
               </div>
 
               <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-[#008080]">
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Funding Success</h3>
                 <p className="text-gray-600">
-                  Our grant writing expertise has helped clients secure over{' '}
-                  <strong className="text-[#008080]">$50M in research funding</strong> with a{' '}
-                  <strong className="text-[#008080]">73% success rate</strong>.
+                  Compelling grant proposals and research documentation that clearly articulate your vision and clinical impact to funding organizations.
                 </p>
               </div>
 

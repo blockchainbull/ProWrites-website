@@ -149,8 +149,8 @@ export default function MedicalEducation() {
               <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-[#008080]">
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Proven Performance</h3>
                 <p className="text-gray-600">
-                  Our content delivers <strong className="text-[#008080]">89% first-time pass rates</strong> and{' '}
-                  <strong className="text-[#008080]">23% higher exam scores</strong>—measurable results that 
+                  Our content delivers <strong className="text-[#008080]"> better first-time pass rates</strong> and{' '}
+                  <strong className="text-[#008080]">higher exam scores</strong>—measurable results that 
                   enhance your program&apos; reputation.
                 </p>
               </div>
@@ -158,8 +158,7 @@ export default function MedicalEducation() {
               <div className="bg-white p-8 rounded-xl shadow-lg border-l-4 border-[#008080]">
                 <h3 className="text-xl font-bold mb-3 text-gray-900">Accelerated Content Development</h3>
                 <p className="text-gray-600">
-                  Physician-authored materials reduce your development time by{' '}
-                  <strong className="text-[#008080]">60%</strong> while ensuring clinical accuracy from day one.
+                  Physician-authored materials reduce your development time while ensuring clinical accuracy from day one.
                 </p>
               </div>
 
