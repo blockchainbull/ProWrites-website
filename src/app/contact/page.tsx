@@ -1,12 +1,10 @@
 'use client'
 import React from 'react'
-import { useForm, ValidationError } from '@formspree/react'
+import { useForm } from '@formspree/react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export default function Contact() {
-  const [state, handleSubmit] = useForm("xjkrdvaa")
-
   return (
     <main className="min-h-screen bg-white">
       <Header />
