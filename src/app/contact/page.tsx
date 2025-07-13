@@ -177,7 +177,7 @@ export default function Contact() {
                             <div className="bg-[#008080] p-6 rounded-xl text-white">
                               <h4 className="font-semibold mb-2">Prefer to Schedule a Call?</h4>
                               <p className="text-teal-100 text-sm mb-4">
-                                Book a 20-minute strategy call to discuss your project in detail.
+                                Book a 30-minute strategy call to discuss your project in detail.
                               </p>   
                                 <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
                                 <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>

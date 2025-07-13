@@ -1,15 +1,16 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link';
-
+import CalendlyWidget from '@/components/Calendly';
 
 export default function About() {
   return (
     <main className="min-h-screen bg-white">
       <Header />
+      <CalendlyWidget />
       
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-[#008080] to-[#006666] text-white py-20">
+      <section className="relative bg-gradient-to-r from-[#008080] to-[#006666] text-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl font-bold mb-6">
@@ -24,10 +25,10 @@ export default function About() {
       </section>
 
       {/* You're Building the Future */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">You&apos;re Building the Future of Healthcare</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">You&apos;re Building the Future of Healthcare</h2>
             <p className="text-xl text-gray-600 leading-relaxed">
               You&apos;re not just another healthcare organization. You&apos;re the innovator developing breakthrough treatments, 
               the educator shaping tomorrow&apos;s clinicians, and the leader transforming patient care. Your work saves lives, 
@@ -38,10 +39,10 @@ export default function About() {
       </section>
 
       {/* Your Challenge */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">Your Challenge is Real</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">Your Challenge is Real</h2>
             <p className="text-xl text-gray-600 leading-relaxed">
               You&apos;re drowning in content demands. Between patient education materials, clinical documentation, 
               research publications, and digital platform content, your team is stretched thin. Meanwhile, 
@@ -53,10 +54,10 @@ export default function About() {
       </section>
 
       {/* You Need Partners */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">You Need Partners Who Get It</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">You Need Partners Who Get It</h2>
             <p className="text-xl text-gray-600 leading-relaxed">
               You need content creators who speak your language—literally. Partners who understand the difference 
               between patient-facing materials and peer-reviewed publications. Who know that a misplaced word in 
@@ -68,12 +69,12 @@ export default function About() {
       </section>
 
       {/* You Deserve Better */}
-      <section className="py-20 bg-[#F1FFE9]">
+      <section className="py-16 bg-[#F1FFE9]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">You Deserve Better Than Generic</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-10 text-center">You Deserve Better Than Generic</h2>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white p-6 rounded-xl shadow-lg text-center">
                 <div className="w-16 h-16 bg-[#008080] rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,11 +113,11 @@ export default function About() {
       </section>
 
       {/* You're Ready to Scale */}
-      <section className="py-20">
+      <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">You&apos;re Ready to Scale Without Compromise</h2>
-            <div className="text-xl text-gray-600 leading-relaxed space-y-4">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">You&apos;re Ready to Scale Without Compromise</h2>
+            <div className="text-xl text-gray-600 leading-relaxed space-y-3">
               <p>You want to expand your content production without sacrificing clinical accuracy.</p>
               <p>You need faster turnaround times without endless revision cycles.</p>
               <p>You want content that enhances your reputation, not undermines it.</p>
@@ -126,10 +127,10 @@ export default function About() {
       </section>
 
       {/* You've Found Your Match */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-8">You&apos;ve Found Your Match</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6">You&apos;ve Found Your Match</h2>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
               We&apos;re the physician-writers who understand your world because we live in it too. 
               We&apos;re your content partners who get it right the first time.
