@@ -70,12 +70,9 @@ export default function Home() {
               We translate complex medical knowledge into clear, actionable content that drives engagement and clinical outcomes.
             </p>
             <div className="flex justify-center space-x-4">
-              <button className="bg-white text-[#008080] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-                Get Quote
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#008080] transition">
-                View Portfolio
-              </button>
+              <Link href="/contact" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#008080] transition">
+                Get in Touch
+              </Link>
             </div>
           </div>
         </div>
@@ -324,7 +321,7 @@ export default function Home() {
             
             <div className="flex items-center justify-center h-20">
               <Image 
-                src="/medtronic.png" 
+                src="/medtronic1.png" 
                 alt="Medtronic" 
                 width={140} 
                 height={60}
@@ -444,11 +441,13 @@ export default function Home() {
             who trust us with their most critical medical writing projects.
           </p>
           <div className="flex justify-center space-x-4">
-            <button className="bg-white text-[#008080] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-lg">
-              Start Your Project
-            </button>
+            <Link href="/contact" className=" border-2 bg-white text-[#008080] px-8 py-4 rounded-lg font-semibold hover:bg-[#008080] hover:border-2 hover:text-white trasition text-lg">
+              Discuss Your Project
+            </Link>
+            <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+            <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
             <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#008080] transition text-lg">
-              Schedule Consultation
+              <a href="https://calendly.com/contact-prowrites/30min">Schedule Consultation</a>
             </button>
           </div>
         </div>

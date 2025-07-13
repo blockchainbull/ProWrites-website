@@ -42,7 +42,9 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4 text-[#008080]">Contact</h4>
             <ul className="space-y-2 text-white">
-              <li>contact@prowrites.io</li>
+              <li>
+                <a href="mailto:contact@prowrites.io" className="hover:text-[#008080] trasition">contact@prowrites.io </a>
+              </li>
             </ul>
           </div>
         </div>

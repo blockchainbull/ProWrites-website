@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Link from 'next/link';
 
 export default function MedicalEducation() {
   return (
@@ -19,12 +20,9 @@ export default function MedicalEducation() {
               into practical knowledge that clinicians can immediately apply in real-world settings.
             </p>
             <div className="flex justify-center space-x-4">
-              <button className="bg-white text-[#008080] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-                Schedule Your Strategy Call
-              </button>
-              <button className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#008080] transition">
-                View Examples
-              </button>
+              <Link href="/contact" className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-[#008080] transition">
+                Ready to discuss your project?
+              </Link>
             </div>
           </div>
         </div>
@@ -260,9 +258,16 @@ export default function MedicalEducation() {
             Let&apos; discuss how physician-authored content can drive better learning outcomes 
             and higher ROI for your organization.
           </p>
-          <button className="bg-white text-[#008080] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-lg">
-            Schedule Your Strategy Call
-          </button>
+          <div className="flex justify-center space-x-4">
+              <Link href="/contact" className=" border-2 bg-white text-[#008080] px-8 py-4 rounded-lg font-semibold hover:bg-[#008080] hover:border-2 hover:text-white trasition text-lg">
+                Let&apos;s Talk
+              </Link>
+              <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+              <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+              <button className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#008080] transition text-lg">
+                <a href="https://calendly.com/contact-prowrites/30min">Schedule Consultation</a>
+              </button>
+            </div>
         </div>
       </section>
 

@@ -152,7 +152,11 @@ export default function Contact() {
                                   </div>
                                   <div>
                                     <h4 className="font-semibold text-gray-900">Email</h4>
-                                    <p className="text-gray-600">contact@prowrites.io</p>
+                                    <p className="text-gray-600">
+                                      <a href="mailto:contact@prowrites.io" className="hover:text-[#008080] transition">
+                                          contact@prowrites.io
+                                      </a>
+                                    </p>
                                     <p className="text-sm text-gray-500">We respond within 24 hours</p>
                                   </div>
                                 </div>
@@ -173,11 +177,13 @@ export default function Contact() {
                             <div className="bg-[#008080] p-6 rounded-xl text-white">
                               <h4 className="font-semibold mb-2">Prefer to Schedule a Call?</h4>
                               <p className="text-teal-100 text-sm mb-4">
-                                Book a 30-minute strategy call to discuss your project in detail.
-                              </p>
-                              <button className="bg-white text-[#008080] px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
-                                Schedule Call
-                              </button>
+                                Book a 20-minute strategy call to discuss your project in detail.
+                              </p>   
+                                <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet"/>
+                                <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+                                <button className="bg-white text-[#008080] px-6 py-2 rounded-lg font-semibold hover:bg-gray-100 transition">
+                                <a href="https://calendly.com/contact-prowrites/30min">Schedule Call</a></button>
+                              
                             </div>
                           </div>
                         </div>
@@ -195,33 +201,30 @@ export default function Contact() {
                           <div className="bg-white p-6 rounded-xl shadow-lg">
                             <h3 className="text-xl font-bold text-gray-900 mb-3">How quickly can you start a project?</h3>
                             <p className="text-gray-600">
-                              Most projects can begin within 1-2 weeks of contract signing. For urgent projects, 
-                              we can often accommodate faster start times with our dedicated rush team.
+                              Most projects can begin within a couple of days of contract signing. For urgent projects, we can often accommodate faster start times.
                             </p>
                           </div>
             
                           <div className="bg-white p-6 rounded-xl shadow-lg">
                             <h3 className="text-xl font-bold text-gray-900 mb-3">Do you work with small organizations?</h3>
                             <p className="text-gray-600">
-                              Absolutely! We work with organizations of all sizes, from solo practices to 
-                              Fortune 500 companies. Our solutions are scalable to meet any budget and scope.
+                              Absolutely! We work with organizations of all sizes, from solo practices to Fortune 500 companies. 
+                              Our solutions are scalable to meet any budget and scope.
                             </p>
                           </div>
             
                           <div className="bg-white p-6 rounded-xl shadow-lg">
                             <h3 className="text-xl font-bold text-gray-900 mb-3">What makes your content different?</h3>
                             <p className="text-gray-600">
-                              All our content is authored or reviewed by practicing physicians, ensuring 
-                              clinical accuracy and real-world applicability that resonates with both 
-                              patients and healthcare professionals.
+                              All our content is authored and reviewed by practicing physicians, 
+                              ensuring clinical accuracy and real-world applicability that resonates with both patients and healthcare professionals.
                             </p>
                           </div>
             
                           <div className="bg-white p-6 rounded-xl shadow-lg">
                             <h3 className="text-xl font-bold text-gray-900 mb-3">Do you handle regulatory compliance?</h3>
                             <p className="text-gray-600">
-                              Yes, our team includes regulatory experts who ensure all content meets 
-                              FDA, EMA, and other relevant regulatory requirements for your industry and region.
+                              Yes, we ensure all content meets FDA, EMA, and other relevant regulatory requirements for your industry and region.
                             </p>
                           </div>
                         </div>
