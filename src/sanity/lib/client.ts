@@ -14,7 +14,7 @@ export function urlFor(source: unknown) {
   return builder.image(source)
 }
 
-// GROQ queries
+// Updated GROQ queries with SEO fields
 export const blogPostsQuery = `
   *[_type == "blogPost"] | order(publishedAt desc) {
     _id,
@@ -24,7 +24,11 @@ export const blogPostsQuery = `
     publishedAt,
     "author": author->name,
     "featuredImage": featuredImage.asset->url,
-    "categories": categories[]->title
+    "featuredImageAlt": featuredImage.alt,
+    "categories": categories[]->title,
+    tags,
+    readingTime,
+    seo
   }
 `
 
@@ -35,8 +39,13 @@ export const blogPostQuery = `
     slug,
     content,
     publishedAt,
+    excerpt,
     "author": author->{name, image},
     "featuredImage": featuredImage.asset->url,
-    "categories": categories[]->title
+    "featuredImageAlt": featuredImage.alt,
+    "categories": categories[]->title,
+    tags,
+    readingTime,
+    seo
   }
 `

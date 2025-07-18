@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CalendlyWidget from '@/components/Calendly'
+import SEO from '@/components/SEO'
 
 interface BlogPost {
   _id: string
@@ -14,6 +15,12 @@ interface BlogPost {
   author: string
   featuredImage?: string
   categories?: string[]
+}
+
+export const metadata = {
+  title: 'Medical Writing Blog - Expert Insights | ProWrites',
+  description: 'Stay informed with the latest medical writing trends, best practices, and expert insights from our team of practicing physicians.',
+  keywords: ['medical writing blog', 'healthcare content', 'medical writing tips', 'physician writers'],
 }
 
 export default async function BlogPage() {
