@@ -1,14 +1,24 @@
 import {client, blogPostsQuery} from '../../sanity/lib/client'
 import Link from 'next/link'
 
+interface BlogPost {
+  _id: string
+  title: string
+  slug: { current: string }
+  excerpt: string
+  publishedAt: string
+  author: string
+}
+
+
 export default async function BlogPage() {
-  const posts = await client.fetch(blogPostsQuery)
+  const posts: BlogPost[] = await client.fetch(blogPostsQuery)
   
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold mb-8">Medical Writing Blog</h1>
       <div className="grid gap-6">
-        {posts.map((post: any) => (
+        {posts.map((post) => (
           <article key={post._id} className="border rounded-lg p-6">
             <h2 className="text-2xl font-semibold mb-2">
               <Link href={`/blog/${post.slug.current}`}>
