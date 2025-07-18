@@ -4,7 +4,6 @@ import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import CalendlyWidget from '@/components/Calendly'
-import SEO from '@/components/SEO'
 
 interface BlogPost {
   _id: string

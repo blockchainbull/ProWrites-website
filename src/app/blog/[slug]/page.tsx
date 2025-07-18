@@ -2,18 +2,18 @@ import {client, blogPostQuery} from '../../../sanity/lib/client'
 import {PortableText} from '@portabletext/react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import SEO from '@/components/SEO'
 import Link from 'next/link'
+import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
 interface BlogPost {
   _id: string
   title: string
   slug: { current: string }
-  content: any[]
+  content: unknown[] // Changed from any[]
   publishedAt: string
   excerpt: string
-  author: { name: string; image?: any }
+  author: { name: string; image?: unknown } // Changed from any
   featuredImage?: string
   featuredImageAlt?: string
   categories?: string[]
@@ -77,19 +77,6 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
   return (
     <main className="min-h-screen bg-white">
-      <SEO
-        title={post.seo?.metaTitle || `${post.title} | ProWrites Blog`}
-        description={post.seo?.metaDescription || post.excerpt}
-        keywords={post.seo?.keywords || post.tags || []}
-        canonicalUrl={post.seo?.canonicalUrl}
-        image={post.featuredImage}
-        imageAlt={post.featuredImageAlt}
-        publishedAt={post.publishedAt}
-        author={post.author.name}
-        type="article"
-        slug={post.slug.current}
-      />
-      
       <Header />
       
       {/* Article Content */}
@@ -138,9 +125,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
               </div>
 
               {post.featuredImage && (
-                <img 
+                <Image 
                   src={post.featuredImage} 
                   alt={post.featuredImageAlt || post.title}
+                  width={800}
+                  height={400}
                   className="w-full h-64 object-cover rounded-xl mb-8"
                 />
               )}

@@ -36,7 +36,7 @@ export default function Home() {
     
     const timer = setTimeout(handleTyping, typingSpeed)
     return () => clearTimeout(timer)
-  }, [currentText, isDeleting, currentWordIndex, typingSpeed])
+  }, [currentText, isDeleting, currentWordIndex, typingSpeed, words])
   return (
     <main className="min-h-screen bg-white">
       <Header />

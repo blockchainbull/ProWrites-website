@@ -1,12 +1,18 @@
 import type { MetadataRoute } from 'next'
 import { client } from '../sanity/lib/client'
 
+interface BlogPostForSitemap {
+  slug: string
+  publishedAt: string
+  _updatedAt: string
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://prowrites.io'
   const currentDate = new Date()
 
   // Get all blog posts
-  const posts = await client.fetch(`
+  const posts: BlogPostForSitemap[] = await client.fetch(`
     *[_type == "blogPost" && defined(slug.current)]{
       "slug": slug.current,
       publishedAt,
@@ -14,7 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }
   `)
 
-  const blogPosts = posts.map((post: any) => ({
+  const blogPosts = posts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
     lastModified: new Date(post._updatedAt || post.publishedAt),
     changeFrequency: 'weekly' as const,
@@ -47,7 +53,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    // Solution pages
     {
       url: `${baseUrl}/solutions/patient-education`,
       lastModified: currentDate,
