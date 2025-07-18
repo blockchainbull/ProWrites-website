@@ -27,7 +27,7 @@ export default function Home() {
       }
       
       if (!isDeleting && currentText === currentWord) {
-        setTimeout(() => setIsDeleting(true), 1000) // Pause before deleting
+        setTimeout(() => setIsDeleting(true), 1000)
       } else if (isDeleting && currentText === '') {
         setIsDeleting(false)
         setCurrentWordIndex((prev) => (prev + 1) % words.length)
@@ -78,16 +78,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Solutions Section */}
+                {/* Full-Width Image Section 
+                <section className="w-full">
+                  <div className="w-full relative">
+                    <Image
+                      src="/illustrate.svg" 
+                      alt="Complex Medical Data to Clear Communication to Better Health Outcomes"
+                      width={1920}
+                      height={800}
+                      className="w-full h-auto"
+                      priority
+                    />
+                  </div> 
+                </section> */}
+                {/* Solutions Section */}
+                <section className="py-20">
+                <div className="container mx-auto px-4">
+                  <div className="text-center mb-16">
+                    <h2 className="text-5xl font-bold text-gray-900 mb-4">Clinical Expertise. Clear Communication. Real Impact.</h2>
+                    <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                      When practicing physicians create your content, the difference is unmistakable. 
+                      Our medical writing team delivers clinically accurate materials that build trust, improve compliance, and deliver measurable results for your organization.
+                    </p>
+                  </div>
+
+      {/* Solutions Section 
       <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16"> */}
+          
+          {/* Image on the left 
+          <div className="w-full h-96 md:h-[32rem] relative overflow-hidden rounded-xl">
+            <Image
+              src="/illustration.svg"
+              alt="Complex Medical Data to Clear Communication to Better Health Outcomes"
+              fill
+              className="object-contain w-full h-full"
+              priority
+            />
+          </div> */}
+          
+          {/* Content on the right 
+          <div>
             <h2 className="text-5xl font-bold text-gray-900 mb-4">Clinical Expertise. Clear Communication. Real Impact.</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600">
               When practicing physicians create your content, the difference is unmistakable. 
               Our medical writing team delivers clinically accurate materials that build trust, improve compliance, and deliver measurable results for your organization.
             </p>
           </div>
+        </div> */}
           
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Patient Education */}

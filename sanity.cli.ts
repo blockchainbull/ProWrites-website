@@ -1,17 +1,15 @@
-/**
-* This configuration file lets you run `$ sanity [command]` in this folder
-* Go to https://www.sanity.io/docs/cli to learn more.
-**/
+// sanity.cli.ts
+
 import { defineCliConfig } from 'sanity/cli'
 
-studioHost: 'https://prowrites.io/studio'
-const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
-const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET
+const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'tudwgmb3'
+const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
 
-export default defineCliConfig({ api: 
-    { projectId, 
+export default defineCliConfig({ 
+    api: { 
+        projectId, 
         dataset  
     },
-        studioHost: 'https://prowrites.io/studio' 
+        studioHost: 'prowrites.io' 
     }
 )
