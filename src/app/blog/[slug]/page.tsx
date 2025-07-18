@@ -1,5 +1,5 @@
 import {client, blogPostQuery} from '../../../sanity/lib/client'
-import {PortableText} from '@portabletext/react'
+import {PortableText, type PortableTextBlock} from '@portabletext/react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
@@ -10,10 +10,10 @@ interface BlogPost {
   _id: string
   title: string
   slug: { current: string }
-  content: unknown[] // Changed from any[]
+  content: PortableTextBlock[]
   publishedAt: string
   excerpt: string
-  author: { name: string; image?: unknown } // Changed from any
+  author: { name: string; image?: string }
   featuredImage?: string
   featuredImageAlt?: string
   categories?: string[]
@@ -28,8 +28,9 @@ interface BlogPost {
 }
 
 // Generate metadata for each blog post
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post: BlogPost = await client.fetch(blogPostQuery, { slug: params.slug })
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const post: BlogPost = await client.fetch(blogPostQuery, { slug })
   
   if (!post) {
     return {
@@ -68,8 +69,9 @@ export async function generateStaticParams() {
   }))
 }
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post: BlogPost = await client.fetch(blogPostQuery, { slug: params.slug })
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+  const post: BlogPost = await client.fetch(blogPostQuery, { slug })
 
   if (!post) {
     notFound()
@@ -137,7 +139,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
 
             {/* Article Content */}
             <div className="prose prose-lg max-w-none">
-              <PortableText value={post.content} />
+              {post.content && post.content.length > 0 ? (
+                <PortableText value={post.content} />
+              ) : (
+                <p className="text-gray-600">No content available.</p>
+              )}
             </div>
 
             {/* Tags */}

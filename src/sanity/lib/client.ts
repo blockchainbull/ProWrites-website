@@ -37,7 +37,13 @@ export const blogPostQuery = `
     _id,
     title,
     slug,
-    content,
+    content[]{
+      ...,
+      _type == "image" => {
+        ...,
+        asset->
+      }
+    },
     publishedAt,
     excerpt,
     "author": author->{name, image},

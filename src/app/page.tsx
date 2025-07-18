@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Image from 'next/image';
@@ -12,7 +12,7 @@ export default function Home() {
   const [isDeleting, setIsDeleting] = useState(false)
   const [typingSpeed, setTypingSpeed] = useState(150)
   
-  const words = ['Patients', 'Users', 'Physicians']
+  const words = useMemo(() => ['Patients', 'Users', 'Physicians'], [])
   
   useEffect(() => {
     const handleTyping = () => {
