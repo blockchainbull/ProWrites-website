@@ -1,4 +1,5 @@
 import {client, blogPostsQuery} from '../../sanity/lib/client'
+import Image from 'next/image'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -48,7 +49,7 @@ export default async function BlogPage() {
                   <article key={post._id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition group">
                     {post.featuredImage && (
                       <div className="aspect-video bg-gray-200 rounded-t-xl overflow-hidden">
-                        <img 
+                        <Image
                           src={post.featuredImage} 
                           alt={post.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -117,7 +118,7 @@ export default async function BlogPage() {
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">Coming Soon</h3>
                 <p className="text-lg text-gray-600 mb-6 max-w-xl mx-auto">
-                  We're preparing valuable insights and expert content on medical writing. 
+                  We&apos;re preparing valuable insights and expert content on medical writing. 
                   Check back soon for the latest industry trends and best practices.
                 </p>
                 <Link 
@@ -172,7 +173,7 @@ export default async function BlogPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Work with Medical Writing Experts?</h2>
           <p className="text-lg mb-6 text-teal-100 max-w-2xl mx-auto">
-            Don't let your medical content fall short. Partner with physicians who understand 
+            Don&apos;t let your medical content fall short. Partner with physicians who understand 
             both the science and the art of effective medical communication.
           </p>
           <div className="flex justify-center space-x-4">
