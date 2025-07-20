@@ -1,4 +1,4 @@
-import {client, blogPostsQuery} from '../../sanity/lib/client'
+import {client, blogPostsQuery, allBlogPostsQuery} from '../../sanity/lib/client'
 import Image from 'next/image'
 import Link from 'next/link'
 import Header from '@/components/Header'
@@ -13,7 +13,9 @@ interface BlogPost {
   publishedAt: string
   author: string
   featuredImage?: string
+  featuredImageAlt?: string
   categories?: string[]
+  status?: string
 }
 
 export const metadata = {
@@ -24,7 +26,12 @@ export const metadata = {
 
 export default async function BlogPage() {
   const posts: BlogPost[] = await client.fetch(blogPostsQuery)
-  
+  const allPosts = await client.fetch(allBlogPostsQuery)
+
+  console.log('Published posts:', posts.length)
+  console.log('All posts:', allPosts.length)
+  console.log('All posts data:', allPosts)
+
   return (
     <main className="min-h-screen bg-white">
       <Header />

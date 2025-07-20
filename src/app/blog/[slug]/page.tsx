@@ -27,6 +27,99 @@ interface BlogPost {
   }
 }
 
+const portableTextComponents = {
+  block: {
+    // Normal paragraph
+    normal: ({children}: {children: React.ReactNode}) => (
+      <p className="text-gray-900 mb-4 leading-relaxed">{children}</p>
+    ),
+    // Headings
+    h1: ({children}: {children: React.ReactNode}) => (
+      <h1 className="text-3xl font-bold text-gray-900 mt-8 mb-4">{children}</h1>
+    ),
+    h2: ({children}: {children: React.ReactNode}) => (
+      <h2 className="text-2xl font-bold text-gray-900 mt-6 mb-3">{children}</h2>
+    ),
+    h3: ({children}: {children: React.ReactNode}) => (
+      <h3 className="text-xl font-bold text-gray-900 mt-4 mb-2">{children}</h3>
+    ),
+    // Blockquote
+    blockquote: ({children}: {children: React.ReactNode}) => (
+      <blockquote className="border-l-4 border-[#008080] pl-4 italic text-gray-700 my-6">
+        {children}
+      </blockquote>
+    ),
+  },
+  // Custom image component
+  types: {
+    image: ({value}: {value: any}) => {
+      if (!value?.asset?._ref) {
+        return null
+      }
+      return (
+        <div className="my-8">
+          <Image
+            src={`https://cdn.sanity.io/images/tudwgmb3/production/${value.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png').replace('-webp', '.webp')}`}
+            alt={value.alt || 'Blog image'}
+            width={800}
+            height={450}
+            className="w-full h-auto rounded-lg shadow-lg"
+          />
+          {value.caption && (
+            <p className="text-sm text-gray-600 text-center mt-2 italic">
+              {value.caption}
+            </p>
+          )}
+        </div>
+      )
+    },
+  },
+  marks: {
+    // Bold text
+    strong: ({children}: {children: React.ReactNode}) => (
+      <strong className="font-bold text-gray-900">{children}</strong>
+    ),
+    // Italic text
+    em: ({children}: {children: React.ReactNode}) => (
+      <em className="italic text-gray-800">{children}</em>
+    ),
+    // Links
+    link: ({children, value}: {children: React.ReactNode, value: any}) => (
+      <a  href={value.href}
+        className="text-[#008080] hover:text-teal-700 underline"
+        target={value.blank ? '_blank' : undefined}
+        rel={value.blank ? 'noopener noreferrer' : undefined}
+      >
+        {children}
+      </a>
+    ),
+  },
+  list: {
+    // Bullet lists
+    bullet: ({children}: {children: React.ReactNode}) => (
+      <ul className="list-disc list-inside mb-4 text-gray-900 space-y-2 ml-4">
+        {children}
+      </ul>
+    ),
+    // Numbered lists
+    number: ({children}: {children: React.ReactNode}) => (
+      <ol className="list-decimal list-inside mb-4 text-gray-900 space-y-2 ml-4">
+        {children}
+      </ol>
+    ),
+  },
+  listItem: {
+    bullet: ({children}: {children: React.ReactNode}) => (
+      <li className="text-gray-900">{children}</li>
+    ),
+    number: ({children}: {children: React.ReactNode}) => (
+      <li className="text-gray-900">{children}</li>
+    ),
+  },
+}
+
+
+
 // Generate metadata for each blog post
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -126,21 +219,28 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 )}
               </div>
 
+              {/* Featured Image with better dimensions */}
               {post.featuredImage && (
-                <Image 
-                  src={post.featuredImage} 
-                  alt={post.featuredImageAlt || post.title}
-                  width={800}
-                  height={400}
-                  className="w-full h-64 object-cover rounded-xl mb-8"
-                />
+                <div className="mb-8">
+                  <Image 
+                    src={post.featuredImage} 
+                    alt={post.featuredImageAlt || post.title}
+                    width={1200}
+                    height={600}
+                    className="w-full h-64 md:h-80 lg:h-96 object-cover rounded-xl shadow-lg"
+                    priority
+                  />
+                </div>
               )}
             </header>
 
-            {/* Article Content */}
-            <div className="prose prose-lg max-w-none">
+            {/* Article Content with custom styling */}
+            <div className="prose-custom max-w-none">
               {post.content && post.content.length > 0 ? (
-                <PortableText value={post.content} />
+                <PortableText 
+                  value={post.content} 
+                  components={portableTextComponents}
+                />
               ) : (
                 <p className="text-gray-600">No content available.</p>
               )}
@@ -149,7 +249,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             {/* Tags */}
             {post.tags && post.tags.length > 0 && (
               <div className="mt-8 pt-8 border-t border-gray-200">
-                <h3 className="text-lg font-semibold mb-4">Tags:</h3>
+                <h3 className="text-lg font-semibold mb-4 text-gray-900">Tags:</h3>
                 <div className="flex flex-wrap gap-2">
                   {post.tags.map((tag, index) => (
                     <span key={index} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">

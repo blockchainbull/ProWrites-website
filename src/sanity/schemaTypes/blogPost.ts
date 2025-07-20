@@ -21,6 +21,19 @@ export const blogPost = defineType({
       },
       validation: (Rule) => Rule.required(),
     }),
+    defineField({
+      name: 'status',
+      title: 'Status',
+      type: 'string',
+      options: {
+        list: [
+          {title: 'Draft', value: 'draft'},
+          {title: 'Preview', value: 'preview'},
+          {title: 'Published', value: 'published'},
+        ],
+      },
+      initialValue: 'published',
+    }),
     // SEO Fields Group
     defineField({
       name: 'seo',
