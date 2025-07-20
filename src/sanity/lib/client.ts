@@ -57,16 +57,3 @@ export const blogPostQuery = `
     seo
   }
 `
-
-// Debug query to see all blog posts regardless of status
-export const allBlogPostsQuery = `
-  *[_type == "blogPost"] | order(_createdAt desc) {
-    _id,
-    title,
-    slug,
-    status,
-    publishedAt,
-    _createdAt,
-    "author": author->name
-  }
-`

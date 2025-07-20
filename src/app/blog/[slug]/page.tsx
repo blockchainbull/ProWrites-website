@@ -1,5 +1,5 @@
 import {client, blogPostQuery} from '../../../sanity/lib/client'
-import {PortableText, type PortableTextBlock} from '@portabletext/react'
+import {PortableText, type PortableTextBlock, type PortableTextComponents} from '@portabletext/react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Link from 'next/link'
@@ -19,6 +19,7 @@ interface BlogPost {
   categories?: string[]
   tags?: string[]
   readingTime?: number
+  status?: string
   seo?: {
     metaTitle?: string
     metaDescription?: string
@@ -27,44 +28,90 @@ interface BlogPost {
   }
 }
 
-const portableTextComponents = {
+// Define types for image values in PortableText
+interface SanityImageAsset {
+  _ref: string
+  _type: 'reference'
+}
+
+interface SanityImage {
+  _type: 'image'
+  asset: SanityImageAsset
+  alt?: string
+  caption?: string
+}
+
+// Custom components for PortableText
+const portableTextComponents: PortableTextComponents = {
   block: {
-    // Normal paragraph
-    normal: ({children}: {children: React.ReactNode}) => (
+    normal: ({ children }) => (
       <p className="text-gray-900 mb-4 leading-relaxed">{children}</p>
     ),
-    // Headings
-    h1: ({children}: {children: React.ReactNode}) => (
+    h1: ({ children }) => (
       <h1 className="text-3xl font-bold text-gray-900 mt-8 mb-4">{children}</h1>
     ),
-    h2: ({children}: {children: React.ReactNode}) => (
+    h2: ({ children }) => (
       <h2 className="text-2xl font-bold text-gray-900 mt-6 mb-3">{children}</h2>
     ),
-    h3: ({children}: {children: React.ReactNode}) => (
+    h3: ({ children }) => (
       <h3 className="text-xl font-bold text-gray-900 mt-4 mb-2">{children}</h3>
     ),
-    // Blockquote
-    blockquote: ({children}: {children: React.ReactNode}) => (
+    blockquote: ({ children }) => (
       <blockquote className="border-l-4 border-[#008080] pl-4 italic text-gray-700 my-6">
         {children}
       </blockquote>
     ),
   },
-  // Custom image component
   types: {
-    image: ({value}: {value: any}) => {
+    image: ({ value }: { value: SanityImage }) => {
       if (!value?.asset?._ref) {
         return null
       }
+      
+      // Handle different image formats including SVG
+      const getImageUrl = (ref: string) => {
+        const parts = ref.replace('image-', '').split('-')
+        const format = parts.pop()
+        const id = parts.join('-')
+        
+        switch (format) {
+          case 'svg':
+            return `https://cdn.sanity.io/images/tudwgmb3/production/${id}.svg`
+          case 'jpg':
+          case 'jpeg':
+            return `https://cdn.sanity.io/images/tudwgmb3/production/${id}.jpg`
+          case 'png':
+            return `https://cdn.sanity.io/images/tudwgmb3/production/${id}.png`
+          case 'webp':
+            return `https://cdn.sanity.io/images/tudwgmb3/production/${id}.webp`
+          case 'gif':
+            return `https://cdn.sanity.io/images/tudwgmb3/production/${id}.gif`
+          default:
+            return `https://cdn.sanity.io/images/tudwgmb3/production/${ref.replace('image-', '').replace(`-${format}`, `.${format}`)}`
+        }
+      }
+      
+      const imageUrl = getImageUrl(value.asset._ref)
+      const isSvg = value.asset._ref.includes('-svg')
+      
       return (
         <div className="my-8">
-          <Image
-            src={`https://cdn.sanity.io/images/tudwgmb3/production/${value.asset._ref.replace('image-', '').replace('-jpg', '.jpg').replace('-png', '.png').replace('-webp', '.webp')}`}
-            alt={value.alt || 'Blog image'}
-            width={800}
-            height={450}
-            className="w-full h-auto rounded-lg shadow-lg"
-          />
+          {isSvg ? (
+            <img
+              src={imageUrl}
+              alt={value.alt || 'Blog image'}
+              className="w-full h-auto max-w-2xl mx-auto rounded-lg shadow-lg"
+              style={{ maxHeight: '500px', objectFit: 'contain' }}
+            />
+          ) : (
+            <Image
+              src={imageUrl}
+              alt={value.alt || 'Blog image'}
+              width={800}
+              height={450}
+              className="w-full h-auto rounded-lg shadow-lg"
+            />
+          )}
           {value.caption && (
             <p className="text-sm text-gray-600 text-center mt-2 italic">
               {value.caption}
@@ -75,50 +122,50 @@ const portableTextComponents = {
     },
   },
   marks: {
-    // Bold text
-    strong: ({children}: {children: React.ReactNode}) => (
+    strong: ({ children }) => (
       <strong className="font-bold text-gray-900">{children}</strong>
     ),
-    // Italic text
-    em: ({children}: {children: React.ReactNode}) => (
+    em: ({ children }) => (
       <em className="italic text-gray-800">{children}</em>
     ),
-    // Links
-    link: ({children, value}: {children: React.ReactNode, value: any}) => (
-      <a  href={value.href}
-        className="text-[#008080] hover:text-teal-700 underline"
-        target={value.blank ? '_blank' : undefined}
-        rel={value.blank ? 'noopener noreferrer' : undefined}
-      >
-        {children}
-      </a>
-    ),
+    link: ({ children, value }) => {
+      const linkValue = value as Record<string, unknown>
+      const linkHref = typeof linkValue?.href === 'string' ? linkValue.href : '#'
+      const isBlank = linkValue?.blank === true
+      
+      return (
+        <a
+          href={linkHref}
+          className="text-[#008080] hover:text-teal-700 underline"
+          target={isBlank ? '_blank' : undefined}
+          rel={isBlank ? 'noopener noreferrer' : undefined}
+        >
+          {children}
+        </a>
+      )
+    },
   },
   list: {
-    // Bullet lists
-    bullet: ({children}: {children: React.ReactNode}) => (
+    bullet: ({ children }) => (
       <ul className="list-disc list-inside mb-4 text-gray-900 space-y-2 ml-4">
         {children}
       </ul>
     ),
-    // Numbered lists
-    number: ({children}: {children: React.ReactNode}) => (
+    number: ({ children }) => (
       <ol className="list-decimal list-inside mb-4 text-gray-900 space-y-2 ml-4">
         {children}
       </ol>
     ),
   },
   listItem: {
-    bullet: ({children}: {children: React.ReactNode}) => (
+    bullet: ({ children }) => (
       <li className="text-gray-900">{children}</li>
     ),
-    number: ({children}: {children: React.ReactNode}) => (
+    number: ({ children }) => (
       <li className="text-gray-900">{children}</li>
     ),
   },
 }
-
-
 
 // Generate metadata for each blog post
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -173,6 +220,26 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   return (
     <main className="min-h-screen bg-white">
       <Header />
+      
+      {/* Preview Banner */}
+      {post.status === 'preview' && (
+        <div className="bg-yellow-100 border-l-4 border-yellow-500 p-4">
+          <div className="container mx-auto px-4">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <svg className="h-5 w-5 text-yellow-400" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                </svg>
+              </div>
+              <div className="ml-3">
+                <p className="text-sm text-yellow-700">
+                  <strong>Preview Mode:</strong> This post is not yet published and is only visible to you.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       
       {/* Article Content */}
       <article className="py-16">
